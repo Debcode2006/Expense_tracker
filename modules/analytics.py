@@ -37,4 +37,4 @@ def get_recent_expenses(df: pd.DataFrame, limit=5):
         return df
 
     df["date"] = pd.to_datetime(df["date"], errors="coerce")
-    return df.sort_values(by="date", ascending=False).head(limit)
+    return df.sort_values(by="date", ascending=False).tail(limit)

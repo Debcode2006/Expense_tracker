@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-DATA_FILE = os.path.join("data", "expenses.csv")
+DATA_FILE = "/mount/data/expenses.csv"
 
 
 def initialize_storage():
