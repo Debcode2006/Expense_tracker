@@ -1,12 +1,13 @@
 import os
 import pandas as pd
-import streamlit as st
 
-# Detect if running on Streamlit Cloud
+# Detect Streamlit Cloud environment
 def get_data_file():
-    if "mount" in os.getcwd().lower():  # Cloud environment
+    is_cloud = "STREAMLIT_RUNTIME" in os.environ
+
+    if is_cloud:
         data_dir = "/mount/data"
-    else:  # Local machine
+    else:
         data_dir = "data"
 
     os.makedirs(data_dir, exist_ok=True)
@@ -17,7 +18,6 @@ DATA_FILE = get_data_file()
 
 
 def initialize_storage():
-    """Creates expenses.csv if it doesn't exist."""
     if not os.path.exists(DATA_FILE):
         df = pd.DataFrame(columns=["date", "category", "amount", "description"])
         df.to_csv(DATA_FILE, index=False)
