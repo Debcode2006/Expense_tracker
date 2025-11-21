@@ -36,8 +36,6 @@ with st.form("add_expense_form"):
     if submitted:
         add_expense(str(date), category, amount, description)
         st.success("Expense added successfully!")
-        st.experimental_rerun()
-
 # ---------------------------
 # Dashboard Overview
 # ---------------------------
