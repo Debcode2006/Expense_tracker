@@ -83,4 +83,4 @@ Use the **Clear All Expenses** button in the UI to wipe the CSV.
 
 ## Author
 
-Debanjan Sarkar, Madhurima Das
+Debanjan Sarkar
