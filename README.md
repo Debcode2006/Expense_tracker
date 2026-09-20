@@ -1,85 +1,66 @@
-# Expense Tracker (Python + Streamlit)
+# Expense Tracker
 
-A simple **Expense Tracker** built using **Python**, **Streamlit**, **Pandas**, and **Plotly**. Tracks daily expenses, displays summaries, and shows charts.
-
----
+A lightweight Streamlit application for recording, storing, and analysing personal expenses. Transactions are persisted in CSV storage and summarized through tables and interactive charts.
 
 ## Features
 
-* Add expenses (date, category, amount, description)
-* View all expenses in a table
-* Total spending summary
-* Category-wise pie chart
-* Month-wise spending bar chart
-* CSV-based storage
+- Add expenses with date, category, amount, and description
+- View stored transactions
+- Calculate total spending
+- Analyse spending by category
+- Analyse spending by month
+- Visualize spending with Plotly charts
+- Clear stored expense data from the application
 
----
+## Architecture
 
-## Folder Structure
-
+```text
+Streamlit UI
+    ↓
+Application Logic
+    ↓
+Data Handler + Analytics Modules
+    ↓
+CSV Storage
 ```
-expense_tracker/
-│── app.py
-│── data/
+
+The application separates data handling and analytics from the Streamlit entry point.
+
+## Repository Structure
+
+```text
+.
+├── app.py
+├── data/
 │   └── expenses.csv
-│── modules/
+├── modules/
 │   ├── data_handler.py
 │   └── analytics.py
-│── requirements.txt
+├── requirements.txt
 └── README.md
 ```
 
----
+## Setup
 
-## Installation
+Install dependencies:
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
-Or:
+Run the application:
 
-```
-python -m pip install -r requirements.txt
-```
-
----
-
-## Run the App
-
-```
+```bash
 streamlit run app.py
 ```
 
-Or:
+## Tech Stack
 
-```
-python -m streamlit run app.py
-```
+**Python · Streamlit · Pandas · Plotly**
 
----
+## Data Storage
 
-## Requirements
-
-```
-streamlit
-pandas
-plotly
-```
-
----
-
-## Description
-
-All expenses are stored in **data/expenses.csv**. You can add, view, and analyze your spending visually through the Streamlit UI.
-
----
-
-## Reset Data
-
-Use the **Clear All Expenses** button in the UI to wipe the CSV.
-
----
+Transactions are stored in `data/expenses.csv`. The application reads the CSV for analysis and writes new transactions through the data-handling module.
 
 ## Author
 
